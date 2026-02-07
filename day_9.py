@@ -8,11 +8,11 @@ class Computer:
     def get_cpu(self):
         return self.__cpu
 
-    def set_age(self, cpu):
+    def set_cpu(self, cpu):
         if type(cpu) == int and cpu > 0:
             self.__cpu = cpu
         else:
-            raise ValueError('age must be positive number')
+            raise ValueError('must be positive number')
 
 
 
@@ -24,7 +24,7 @@ class Computer:
 
 
     def make_computers(self):
-        return self.__cpu + self.__memory
+        return f' Мощность: {self.__cpu + self.__memory}'
 
     # @property
     # def cpu(self):
@@ -66,6 +66,16 @@ class SmartPhone(Computer, Telephone):
 
     def use_gps(self, location):
         print(f'rout to {location}')
+
+computer = Computer(24, 526)
+telephone = Telephone("list")
+smartphone = SmartPhone(8, 500)
+smartphone2 = SmartPhone(16, 256)
+
+print(computer.make_computers())
+print(telephone.call(1, "996558880544"))
+print(telephone.__str__())
+print(smartphone.use_gps('Bishkek'))
 
 
 
